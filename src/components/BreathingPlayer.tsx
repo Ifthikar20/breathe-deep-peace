@@ -81,14 +81,6 @@ export const BreathingPlayer = ({ onPlay, onPause, onProgressChange }: Breathing
             <span>{formatTime(duration)}</span>
           </div>
         </div>
-        
-        {isPlaying && (
-          <div className="flex items-center justify-center space-x-2">
-            <div className="w-2 h-2 bg-wellness rounded-full animate-pulse-gentle"></div>
-            <span className="text-sm text-wellness">Playing...</span>
-            <div className="w-2 h-2 bg-wellness rounded-full animate-pulse-gentle"></div>
-          </div>
-        )}
       </div>
     </div>
   );

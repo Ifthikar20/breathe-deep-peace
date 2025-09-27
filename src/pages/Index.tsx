@@ -44,13 +44,10 @@ const Index = () => {
                 onProgressChange={handleProgressChange}
               />
               
+              <TranscriptArea isVisible={isPlaying} />
+              
               <BreathingInfo />
             </div>
-          </div>
-          
-          {/* Transcript Section - Below player */}
-          <div className="max-w-2xl mx-auto">
-            <TranscriptArea isVisible={isPlaying} />
           </div>
         </div>
       </div>
