@@ -14,38 +14,45 @@ const Index = () => {
     setIsPlaying(false);
   };
 
+  const handleProgressChange = (progress: number) => {
+    console.log("Audio progress:", progress);
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
       {/* Main Content Area */}
       <div className="container mx-auto px-6 py-12">
         <div className="max-w-6xl mx-auto">
           {/* Plant Image and Player Section */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Plant Image */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Plant Image - Seamless blend */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <img
                   src={plantImage}
                   alt="Calming green plant for breathing exercises"
-                  className="w-80 h-80 object-contain filter drop-shadow-lg transition-transform duration-500 hover:scale-105"
+                  className="w-96 h-96 object-contain transition-transform duration-500 hover:scale-105 opacity-95"
                 />
-                <div className="absolute -inset-4 bg-wellness-light/20 rounded-full blur-xl -z-10"></div>
               </div>
             </div>
             
             {/* Breathing Player */}
             <div className="flex justify-center lg:justify-start">
               <div className="w-full max-w-md">
-                <BreathingPlayer onPlay={handlePlay} onPause={handlePause} />
+                <BreathingPlayer 
+                  onPlay={handlePlay} 
+                  onPause={handlePause}
+                  onProgressChange={handleProgressChange}
+                />
               </div>
             </div>
           </div>
-          
-          {/* Transcript Section */}
-          <div className="max-w-2xl mx-auto">
-            <TranscriptArea isVisible={isPlaying} />
-          </div>
         </div>
+      </div>
+      
+      {/* Transcript - Bottom Right */}
+      <div className="fixed bottom-6 right-6 w-80 max-h-60 z-10">
+        <TranscriptArea isVisible={isPlaying} />
       </div>
     </div>
   );

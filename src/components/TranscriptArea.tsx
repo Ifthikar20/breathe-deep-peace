@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface TranscriptAreaProps {
@@ -22,26 +21,26 @@ Continue breathing at your own pace. You are safe, you are present, you are enou
 
   if (!isVisible) {
     return (
-      <Card className="p-6 bg-wellness-soft/30 border-wellness-light/50">
-        <div className="text-center text-muted-foreground">
-          <p>Transcript will appear here when audio is playing</p>
+      <div className="p-4 bg-transparent">
+        <div className="text-center text-muted-foreground/60">
+          <p className="text-sm">Transcript will appear here when audio is playing</p>
         </div>
-      </Card>
+      </div>
     );
   }
 
   return (
-    <Card className="p-6 bg-wellness-soft/30 border-wellness-light shadow-[var(--shadow-gentle)]">
-      <div className="space-y-4">
-        <h3 className="text-lg font-medium text-foreground">
+    <div className="p-4 bg-transparent">
+      <div className="space-y-3">
+        <h3 className="text-sm font-medium text-foreground/80">
           Audio Transcript
         </h3>
-        <ScrollArea className="h-48 w-full rounded-md border border-wellness-light/50 p-4 bg-background/50">
-          <div className="text-sm text-foreground leading-relaxed whitespace-pre-line">
+        <ScrollArea className="h-40 w-full rounded-md p-3 bg-wellness-soft/20">
+          <div className="text-xs text-foreground/70 leading-relaxed whitespace-pre-line">
             {sampleTranscript}
           </div>
         </ScrollArea>
       </div>
-    </Card>
+    </div>
   );
 };
