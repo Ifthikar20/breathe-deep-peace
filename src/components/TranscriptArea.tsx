@@ -23,7 +23,7 @@ Continue breathing at your own pace. You are safe, you are present, you are enou
     return (
       <div className="p-4 bg-transparent">
         <div className="text-center text-muted-foreground/60">
-          <p className="text-sm">Transcript will appear here when audio is playing</p>
+          <p className="text-sm">Transcript will appear here when audio begins</p>
         </div>
       </div>
     );

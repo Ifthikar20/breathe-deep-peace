@@ -56,7 +56,7 @@ export const BreathingPlayer = ({ onPlay, onPause, onProgressChange }: Breathing
             w-20 h-20 rounded-full bg-wellness text-white 
             hover:bg-wellness/90 transition-all duration-300 
             shadow-[var(--shadow-gentle)] hover:shadow-[var(--shadow-breathing)]
-            ${isPlaying ? 'animate-breathe' : 'hover:scale-105'}
+            hover:scale-105
           `}
         >
           {isPlaying ? (
