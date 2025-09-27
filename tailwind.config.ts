@@ -47,6 +47,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        wellness: {
+          DEFAULT: "hsl(var(--wellness-green))",
+          light: "hsl(var(--wellness-light))",
+          soft: "hsl(var(--wellness-soft))",
+        },
+        breathing: {
+          glow: "hsl(var(--breathing-glow))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -84,6 +92,44 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "breathe": "breathe 4s ease-in-out infinite",
+        "pulse-gentle": "pulse-gentle 2s ease-in-out infinite",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
+        "breathe": {
+          "0%, 100%": {
+            transform: "scale(1)",
+            boxShadow: "0 0 20px hsl(var(--breathing-glow) / 0.3)",
+          },
+          "50%": {
+            transform: "scale(1.05)",
+            boxShadow: "0 0 40px hsl(var(--breathing-glow) / 0.6)",
+          },
+        },
+        "pulse-gentle": {
+          "0%, 100%": {
+            opacity: "0.6",
+          },
+          "50%": {
+            opacity: "1",
+          },
+        },
       },
     },
   },
